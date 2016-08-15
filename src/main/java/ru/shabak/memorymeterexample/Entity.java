@@ -2,22 +2,26 @@ package ru.shabak.memorymeterexample;
 
 import java.util.List;
 
+import org.github.jamm.Unmetered;
+
 /**
  * @author Nikolay Shabak (nikolay)
  * @since 15/08/16
  */
-public class MyClass {
+public class Entity {
     private Integer id;
     private String name;
     private String description;
     private List<String> strings;
-    private List<Linked> linkeds;
 
-    public MyClass(Integer id, String name, String description, List<String> strings, List<Linked> linkeds) {
+    @Unmetered
+    private List<RelatedEntity> relatedEntities;
+
+    public Entity(Integer id, String name, String description, List<String> strings, List<RelatedEntity> relatedEntities) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.strings = strings;
-        this.linkeds = linkeds;
+        this.relatedEntities = relatedEntities;
     }
 }

@@ -23,6 +23,7 @@
             <groupId>com.github.jbellis</groupId>
             <artifactId>jamm</artifactId>
             <version>0.3.1</version>
+            <!--<version>0.3.2-SNAPSHOT</version>-->
         </dependency>
     </dependencies>
 

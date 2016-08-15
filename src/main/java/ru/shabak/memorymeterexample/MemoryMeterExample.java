@@ -27,32 +27,33 @@ public class MemoryMeterExample {
         List<String> list2 = Splitter.on(",").splitToList("RU,BY,KZ,RU,BY,KZ");
         List<String> list3 = Splitter.on(",").splitToList("RU,BY,KZ,RU,BY,KZ,RU,BY,KZ,BY,KZ,RU,BY,KZ,RU,BY,KZ,BY,KZ,RU,BY,KZ,RU,BY,KZ");
 
-        List<Linked> linkeds = new ArrayList<Linked>();
-        linkeds.add(new Linked(1, "name"));
-        linkeds.add(new Linked(2, "name"));
-        linkeds.add(new Linked(3, "name"));
-        linkeds.add(new Linked(4, "name"));
-        MyClass myClass = new MyClass(1,"name","description", list3, linkeds);
+        List<RelatedEntity> relatedEntities = new ArrayList<RelatedEntity>();
+        relatedEntities.add(new RelatedEntity(1, "name"));
+        relatedEntities.add(new RelatedEntity(2, "namenamename"));
+        relatedEntities.add(new RelatedEntity(3, "name"));
+        relatedEntities.add(new RelatedEntity(4, "name"));
+        Entity entity = new Entity(1,"name","description", list3, relatedEntities);
 
-//        System.out.println(RamUsageEstimator.humanSizeOf(s1));
-//        System.out.println(RamUsageEstimator.humanSizeOf(s2));
-//        System.out.println(RamUsageEstimator.humanSizeOf(s3));
-//        System.out.println(RamUsageEstimator.humanSizeOf(s4));
-//        System.out.println(RamUsageEstimator.humanSizeOf(list));
-//        System.out.println(RamUsageEstimator.humanSizeOf(list2));
-//        System.out.println(RamUsageEstimator.humanSizeOf(list3));
-        System.out.println(RamUsageEstimator.humanSizeOf(myClass));
+        System.out.println("-= Ram Usage Estimator =-");
+        System.out.println(RamUsageEstimator.humanSizeOf(s1));
+        System.out.println(RamUsageEstimator.humanSizeOf(s2));
+        System.out.println(RamUsageEstimator.humanSizeOf(s3));
+        System.out.println(RamUsageEstimator.humanSizeOf(s4));
+        System.out.println(RamUsageEstimator.humanSizeOf(list));
+        System.out.println(RamUsageEstimator.humanSizeOf(list2));
+        System.out.println(RamUsageEstimator.humanSizeOf(list3));
+        System.out.println(RamUsageEstimator.humanSizeOf(entity));
 
-        System.out.println("-= MEMORY METER =-");
-//        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(s1)));
-//        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(s2)));
-//        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(s3)));
-//        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(s4)));
-//        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(list)));
-//        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(list2)));
-//        long measure = meter.measureDeep(list3);
-//        System.out.println(RamUsageEstimator.humanReadableUnits(measure));
-        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(myClass)));
+        System.out.println("-= Memory Meter =-");
+        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(s1)));
+        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(s2)));
+        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(s3)));
+        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(s4)));
+        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(list)));
+        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(list2)));
+        long measure = meter.measureDeep(list3);
+        System.out.println(RamUsageEstimator.humanReadableUnits(measure));
+        System.out.println(RamUsageEstimator.humanReadableUnits(meter.measureDeep(entity)));
 
     }
 }
